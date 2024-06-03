@@ -26,8 +26,15 @@
     </div>
     <script>
        document.getElementById('image1').addEventListener('click', function() {
-            window.location.href = 'https://www.google.com';
-       });
+          var input = document.createElement('input');
+            // Set attributes for the input element
+            input.type = 'text';
+            input.placeholder = 'Enter text here...';
+            input.className = 'dynamic-input';
+
+            // Append the input element to the container
+            document.getElementById('image1').appendChild(input);
+        });
     </script>
   </body>
 </html>

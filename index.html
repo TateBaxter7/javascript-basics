@@ -14,6 +14,24 @@
       .hover-image:hover {
         transform: scale(1.5);
       }
+      .container {
+        text-align: center;
+        margin-top: 100px;
+        }
+      .textarea-container {
+        margin-top: 20px;
+        }
+      .dynamic-textarea {
+        text-align: center;
+        vertical-align: middle;
+        display: block;
+        margin: 10px auto;
+        width: 300px;
+        height: 100px;
+        }
+      .container2 {
+        text-align: center;
+      }
     </style>
   </head>
   <body>
@@ -24,16 +42,31 @@
 
       <img src="img/noun-add-6885844.svg" class="hover-image" xmlns="http://www.w3.org/2000/svg" id="image1"> 
     </div>
+    <div class="container">
+        <button id="createTextBoxButton">Create Text Box</button>
+        <div class="input-container" id="inputContainer"></div>
+    </div>
+    <div class="container2">
+        <button id="createTextAreaButton">Create Text Area</button>
+        <div class="textarea-container" id="textareaContainer"></div>
+    </div>
+
     <script>
-       document.getElementById('image1').addEventListener('click', function() {
-          var input = document.createElement('input');
-            // Set attributes for the input element
+        document.getElementById('image1').addEventListener('click', function() {
+            window.location.href = 'https://www.google.com';
+       });
+        document.getElementById('createTextBoxButton').addEventListener('click', function() {
+            var input = document.createElement('input');
             input.type = 'text';
             input.placeholder = 'Enter text here...';
             input.className = 'dynamic-input';
-
-            // Append the input element to the container
-            document.getElementById('image1').appendChild(input);
+            document.getElementById('inputContainer').appendChild(input);
+        });
+        document.getElementById('createTextAreaButton').addEventListener('click', function() {
+            var textarea = document.createElement('textarea');
+            textarea.placeholder = 'Enter text here...';
+            textarea.className = 'dynamic-textarea';
+            document.getElementById('textareaContainer').appendChild(textarea);
         });
     </script>
   </body>
